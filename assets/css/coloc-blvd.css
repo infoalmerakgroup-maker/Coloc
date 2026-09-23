@@ -1,0 +1,332 @@
+/* ==========================================================================
+   Coloc.Work — Main Boulevard branch page
+   (reuses .mm-* rails, cards and buttons from coloc-mm.css)
+   ========================================================================== */
+
+.bl-plans {
+  font-family: var(--at-ff-body, 'DM Sans', sans-serif);
+}
+
+/* ---------- plans ---------- */
+.bl-plans {
+  padding: clamp(56px, 7vw, 104px) 0;
+  background: var(--at-neutral-0, #fff);
+  color: var(--at-neutral-900, #111);
+}
+
+.bl-plans__head { margin-bottom: clamp(24px, 3vw, 44px); }
+
+.bl-plans__lead {
+  margin: 12px 0 0;
+  max-width: 56ch;
+  font-size: clamp(0.95rem, 1.05vw, 1.08rem);
+  line-height: 1.65;
+  opacity: 0.7;
+}
+
+.bl-plans__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+  align-items: stretch;
+}
+
+.bl-plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(24px, 2.8vw, 34px);
+  border-radius: 22px;
+  border: 1px solid rgba(128, 128, 128, 0.22);
+  background: var(--at-neutral-0, #fff);
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bl-plan:hover {
+  border-color: var(--at-theme-primary, #811453);
+  transform: translateY(-5px);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.12);
+}
+
+.bl-plan.is-best {
+  border-color: var(--at-theme-primary, #811453);
+  background: linear-gradient(170deg, rgba(129, 20, 83, 0.08) 0%, rgba(129, 20, 83, 0.02) 55%);
+}
+
+.bl-plan__flag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--at-theme-primary, #811453);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.bl-plan__name {
+  margin: 0 0 4px;
+  font-family: var(--at-ff-heading, 'DM Sans', sans-serif);
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.bl-plan__hours { font-size: 13px; opacity: 0.6; }
+
+.bl-plan__price {
+  margin: 16px 0 0;
+  font-family: var(--at-ff-heading, 'DM Sans', sans-serif);
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--at-theme-primary, #811453);
+}
+
+.bl-plan__price small { font-size: 0.4em; font-weight: 500; opacity: 0.75; }
+
+.bl-plan__desc {
+  margin: 10px 0 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.68;
+}
+
+.bl-plan__list {
+  display: grid;
+  gap: 9px;
+  margin: 0 0 22px;
+  padding: 18px 0 0;
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+  list-style: none;
+}
+
+.bl-plan__list li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  opacity: 0.78;
+}
+
+.bl-plan__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--at-theme-primary, #811453);
+}
+
+.bl-plan .mm-btn { margin-top: auto; }
+
+.bl-plans__note {
+  margin: 24px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.55;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 991.98px) {
+  .bl-plans__grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bl-plan { transition: none !important; transform: none !important; }
+}
+
+/* ---------- icon on each plan card ---------- */
+.bl-plan__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 16px;
+  border-radius: 14px;
+  background: rgba(129, 20, 83, 0.1);
+  color: var(--at-theme-primary, #811453);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bl-plan:hover .bl-plan__icon,
+.bl-plan.is-best .bl-plan__icon {
+  background: var(--at-theme-primary, #811453);
+  color: #fff;
+}
+
+/* the shared custom-pricing block sits on a light page here */
+.bl-custom {
+  margin-top: clamp(40px, 5vw, 70px);
+  padding-top: clamp(32px, 4vw, 56px);
+  border-top: 1px solid rgba(128, 128, 128, 0.25);
+}
+
+.bl-custom .cw-custom__icon { background: var(--at-theme-primary, #811453); color: #fff; }
+.bl-custom .cw-custom__title { color: inherit; }
+.bl-custom .cw-custom__text { color: inherit; opacity: 0.6; }
+.bl-custom .cw-custom__link,
+.bl-custom .cw-custom__value { color: inherit; }
+.bl-custom .cw-custom__link:hover,
+.bl-custom .cw-custom__value:hover { color: var(--at-theme-primary, #811453); }
+
+/* ==========================================================================
+   Why this branch — split list (different from MM Alam's card rail)
+   ========================================================================== */
+.bl-why {
+  padding: clamp(56px, 7vw, 104px) 0;
+  background: var(--at-neutral-50, #f5f5f5);
+  color: var(--at-neutral-900, #111);
+  font-family: var(--at-ff-body, 'DM Sans', sans-serif);
+}
+
+.bl-why__row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(28px, 5vw, 90px);
+  align-items: start;
+}
+
+.bl-why__aside { position: sticky; top: 120px; }
+
+.bl-why__lead {
+  margin: 12px 0 24px;
+  max-width: 36ch;
+  font-size: clamp(0.95rem, 1.05vw, 1.08rem);
+  line-height: 1.65;
+  opacity: 0.7;
+}
+
+.bl-why__cta { padding: 13px 26px; }
+
+.bl-why__list { display: grid; }
+
+.bl-why__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: start;
+  gap: 0 20px;
+  padding: clamp(22px, 2.6vw, 32px) 0;
+  border-top: 1px solid rgba(128, 128, 128, 0.28);
+  transition: padding-left 0.35s ease;
+}
+
+.bl-why__item:last-child { border-bottom: 1px solid rgba(128, 128, 128, 0.28); }
+
+/* a brand bar slides in from the left on hover */
+.bl-why__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--at-theme-primary, #811453);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.35s ease;
+}
+
+.bl-why__item:hover { padding-left: 20px; }
+.bl-why__item:hover::before { transform: scaleY(1); }
+
+.bl-why__num {
+  font-family: var(--at-ff-heading, 'DM Sans', sans-serif);
+  font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: rgba(128, 128, 128, 0.4);
+  transition: color 0.3s ease;
+}
+
+.bl-why__item:hover .bl-why__num { color: var(--at-theme-primary, #811453); }
+
+.bl-why__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  background: rgba(129, 20, 83, 0.1);
+  color: var(--at-theme-primary, #811453);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bl-why__item:hover .bl-why__icon {
+  background: var(--at-theme-primary, #811453);
+  color: #fff;
+}
+
+.bl-why__text h3 {
+  margin: 0 0 8px;
+  font-family: var(--at-ff-heading, 'DM Sans', sans-serif);
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.bl-why__text p {
+  margin: 0;
+  max-width: 52ch;
+  font-size: 14.5px;
+  line-height: 1.7;
+  opacity: 0.7;
+}
+
+@media (max-width: 991.98px) {
+  .bl-why__row { grid-template-columns: 1fr; }
+  .bl-why__aside { position: static; }
+  .bl-why__lead { max-width: none; }
+}
+
+@media (max-width: 575.98px) {
+  .bl-why__item { grid-template-columns: auto 1fr; gap: 12px 16px; }
+  .bl-why__num { grid-column: 1; }
+  .bl-why__icon { grid-column: 2; justify-self: start; }
+  .bl-why__text { grid-column: 1 / -1; margin-top: 12px; }
+  .bl-why__item:hover { padding-left: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bl-why__item,
+  .bl-why__item::before,
+  .bl-plan__icon { transition: none !important; }
+}
+
+/* ---------- icons in the plan feature list ---------- */
+.bl-plan__list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 0;
+}
+
+.bl-plan__list li::before { content: none; }
+
+.bl-plan__li-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  background: rgba(129, 20, 83, 0.1);
+  color: var(--at-theme-primary, #811453);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bl-plan:hover .bl-plan__li-icon {
+  background: var(--at-theme-primary, #811453);
+  color: #fff;
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Coloc.Work — Coworking Space in Lahore",
+  "short_name": "Coloc.Work",
+  "description": "Coworking space in Gulberg, Lahore. Two branches, open 24 hours.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#811453",
+  "icons": [
+    { "src": "/assets/imgs/template/logo/coloc-wordmark-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/assets/imgs/template/logo/coloc-wordmark-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/assets/imgs/template/logo/coloc-wordmark-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

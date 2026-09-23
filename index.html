@@ -8,8 +8,89 @@
       name="description"
       content="Coloc.Work — Lahore's premier co-working space where ambition meets opportunity. Flexible desks, private offices and meeting rooms."
     />
-    <title>Coloc.Work — Co-working Space in Lahore</title>
-    <link rel="shortcut icon" type="image/x-icon" href="./assets/imgs/template/logo/favicon.svg" />
+    <title>Coloc.Work — Coworking Space in Gulberg, Lahore | Open 24 Hours</title>
+    <meta name="keywords" content="coworking space Lahore, coworking space in Gulberg, shared office Lahore, private office Lahore, serviced office Lahore, hot desk Lahore, dedicated desk Lahore, meeting room Lahore, event space Lahore, 24/7 coworking Lahore, Coloc.Work" />
+    <meta name="author" content="Coloc.Work" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#811453" />
+    <link rel="canonical" href="https://coloc.work/" />
+
+    <!-- Structured data: helps Google show the branches, hours and phone -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://coloc.work/#org",
+          "name": "Coloc.Work",
+          "url": "https://coloc.work/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://coloc.work/assets/imgs/template/logo/coloc-wordmark-512.png",
+            "width": 512,
+            "height": 512
+          },
+          "email": "hi@coloc.work",
+          "telephone": "+92-339-4226562",
+          "sameAs": [
+            "https://www.instagram.com/colocwork",
+            "https://www.facebook.com/Coloc.Work",
+            "https://www.tiktok.com/@colocwork"
+          ]
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://coloc.work/locations#main-boulevard",
+          "name": "Coloc.Work — Main Boulevard",
+          "parentOrganization": { "@id": "https://coloc.work/#org" },
+          "image": "https://coloc.work/assets/imgs/pages/locations/main-boulevard.webp",
+          "telephone": "+92-339-4226562",
+          "priceRange": "PKR 15,000 - PKR 18,000",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1st Floor, 69-B Main Blvd Gulberg, Block H Gulberg 2",
+            "addressLocality": "Lahore",
+            "postalCode": "54660",
+            "addressCountry": "PK"
+          },
+          "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "00:00", "closes": "23:59"
+          }]
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://coloc.work/locations#mm-alam-road",
+          "name": "Coloc.Work — MM Alam Road",
+          "parentOrganization": { "@id": "https://coloc.work/#org" },
+          "image": "https://coloc.work/assets/imgs/pages/locations/mm-alam-road.jpg",
+          "telephone": "+92-339-4226562",
+          "priceRange": "PKR 25,000",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "23 MM Alam Rd, Block C3, Gulberg III",
+            "addressLocality": "Lahore",
+            "postalCode": "54000",
+            "addressCountry": "PK"
+          },
+          "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "00:00", "closes": "23:59"
+          }]
+        }
+      ]
+    }
+    </script>
+    <!-- Coloc.Work site icon: .ico for older browsers, PNGs for everything else -->
+    <link rel="icon" href="/assets/imgs/template/logo/coloc-favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/template/logo/coloc-wordmark-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/template/logo/coloc-wordmark-32.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/imgs/template/logo/coloc-wordmark-512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/imgs/template/logo/coloc-wordmark-180.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Google Fonts: DM Sans (matches Next.js next/font/google) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,22 +101,33 @@
     />
 
     <!-- Vendor CSS (keep paths identical to HTML build) -->
-    <link rel="stylesheet" href="./assets/css/vendors/carouselTicker.css" />
-    <link rel="stylesheet" href="./assets/css/vendors/bootstrap.min.css" />
-    <link rel="stylesheet" href="./assets/css/vendors/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./assets/css/vendors/nice-select.css" />
-    <link rel="stylesheet" href="./assets/css/vendors/font-awesome-pro.css" />
-    <link rel="stylesheet" href="./assets/css/vendors/magnific-popup.css" />
-    <link rel="stylesheet" href="./assets/css/vendors/odometer.css" />
-    <link rel="stylesheet" href="./assets/css/vendors/spacing.css" />
+    <link rel="stylesheet" href="/assets/css/vendors/carouselTicker.css" />
+    <link rel="stylesheet" href="/assets/css/vendors/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/vendors/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/css/vendors/nice-select.css" />
+    <link rel="stylesheet" href="/assets/css/vendors/font-awesome-pro.css" />
+    <link rel="stylesheet" href="/assets/css/vendors/magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/css/vendors/odometer.css" />
+    <link rel="stylesheet" href="/assets/css/vendors/spacing.css" />
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="stylesheet" href="./assets/css/sticky-cards.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/sticky-cards.css" />
+    <link rel="stylesheet" href="/assets/css/coloc-hero.css" />
+    <link rel="stylesheet" href="/assets/css/coloc-locations.css" />
+    <link rel="stylesheet" href="/assets/css/coloc-pricing.css" />
+    <link rel="stylesheet" href="/assets/css/coloc-about.css" />
+    <link rel="stylesheet" href="/assets/css/coloc-contact.css" />
+    <link rel="stylesheet" href="/assets/css/coloc-locations-page.css" />
+    <link rel="stylesheet" href="/assets/css/coloc-branch.css" />
+    <link rel="stylesheet" href="/assets/css/coloc-mm.css" />
+    <link rel="stylesheet" href="/assets/css/coloc-blvd.css" />
+    <link rel="stylesheet" href="/assets/css/coloc-services.css" />
+    <link rel="stylesheet" href="/assets/css/coloc-service-detail.css" />
 
     <!-- Theme init before paint -->
-    <script src="./scripts/theme-init.js"></script>
-    <script type="module" crossorigin src="./assets/index-D-FA3kKF.js"></script>
+    <script src="/scripts/theme-init.js"></script>
+    <script type="module" crossorigin src="/assets/index-D-FA3kKF.js"></script>
   </head>
   <body class="at-magic-cursor">
     <div id="root"></div>
