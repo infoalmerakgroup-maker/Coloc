@@ -1,0 +1,259 @@
+/* ==========================================================================
+   Coloc.Work — meeting room booking page (/book, and book.coloc.work)
+   Sits inside the normal site layout, so it inherits the real header
+   and footer; only the page body is styled here.
+   ========================================================================== */
+
+.bk-page {
+  font-family: var(--at-ff-body, 'DM Sans', sans-serif);
+  background: var(--at-neutral-0, #fefefe);
+  color: var(--at-neutral-900, #101010);
+}
+
+/* ---------- intro ---------- */
+.bk-intro {
+  padding: clamp(126px, 15vh, 180px) 0 clamp(28px, 4vw, 44px);
+}
+
+.bk-intro__inner { max-width: 48ch; }
+
+.bk-eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 7px 16px;
+  border: 1px solid rgba(129, 20, 83, 0.25);
+  border-radius: 999px;
+  background: rgba(129, 20, 83, 0.06);
+  color: var(--at-theme-primary, #811453);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.bk-title {
+  margin: 0 0 16px;
+  font-family: var(--at-ff-heading, 'DM Sans', sans-serif);
+  font-size: clamp(2.2rem, 5.2vw, 4.2rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.038em;
+  color: var(--at-neutral-900, #101010);
+}
+
+.bk-lead {
+  margin: 0;
+  font-size: clamp(0.98rem, 1.15vw, 1.15rem);
+  line-height: 1.65;
+  color: rgba(16, 16, 16, 0.68);
+}
+
+/* ---------- room cards ---------- */
+.bk-rooms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 2.6vw, 30px);
+  padding-bottom: clamp(56px, 7vw, 104px);
+}
+
+.bk-room {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--at-neutral-0, #fefefe);
+  box-shadow: 0 20px 48px rgba(16, 16, 16, 0.08);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bk-room:hover {
+  transform: translateY(-4px);
+  border-color: rgba(129, 20, 83, 0.4);
+  box-shadow: 0 26px 56px rgba(129, 20, 83, 0.14);
+}
+
+.bk-room__media {
+  margin: 0;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: rgba(129, 20, 83, 0.06);
+}
+
+.bk-room__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.bk-room:hover .bk-room__media img { transform: scale(1.04); }
+
+.bk-room__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  padding: clamp(22px, 2.5vw, 30px);
+}
+
+.bk-room__name {
+  margin: 0;
+  font-family: var(--at-ff-heading, 'DM Sans', sans-serif);
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.bk-room__addr {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(16, 16, 16, 0.6);
+}
+
+.bk-room__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 2px 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.bk-room__facts li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 13px;
+  border: 1px solid rgba(16, 16, 16, 0.12);
+  border-radius: 999px;
+  font-size: 13px;
+  color: rgba(16, 16, 16, 0.65);
+}
+
+.bk-room__facts svg {
+  width: 14px;
+  height: 14px;
+  color: var(--at-theme-primary, #811453);
+}
+
+.bk-room__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: auto;
+  padding: 15px 24px;
+  border: 1px solid var(--at-theme-primary, #811453);
+  border-radius: 999px;
+  background: var(--at-theme-primary, #811453);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.bk-room__cta:hover {
+  background: #6a1046;
+  border-color: #6a1046;
+  color: #fff;
+}
+
+.bk-room__cta svg { transition: transform 0.3s ease; }
+.bk-room__cta:hover svg { transform: translateX(3px); }
+
+/* ---------- help strip ---------- */
+.bk-help {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: clamp(56px, 7vw, 104px);
+  padding: clamp(22px, 2.6vw, 32px);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  border-radius: 20px;
+  background: rgba(129, 20, 83, 0.04);
+}
+
+.bk-help p {
+  margin: 0;
+  font-size: 1rem;
+  color: rgba(16, 16, 16, 0.7);
+}
+
+.bk-help b { color: var(--at-neutral-900, #101010); font-weight: 600; }
+
+.bk-help__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 22px;
+  border: 1px solid rgba(129, 20, 83, 0.35);
+  border-radius: 999px;
+  color: var(--at-theme-primary, #811453);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bk-help__link:hover {
+  background: var(--at-theme-primary, #811453);
+  color: #fff;
+}
+
+/* ---------- dark theme ---------- */
+[data-bs-theme=dark] .bk-lead,
+[data-bs-theme=dark] .bk-room__addr,
+[data-bs-theme=dark] .bk-help p { color: rgba(255, 255, 255, 0.7); }
+
+[data-bs-theme=dark] .bk-room,
+[data-bs-theme=dark] .bk-help { border-color: rgba(255, 255, 255, 0.14); }
+
+[data-bs-theme=dark] .bk-room { box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45); }
+
+[data-bs-theme=dark] .bk-room__facts li {
+  border-color: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+[data-bs-theme=dark] .bk-eyebrow {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(129, 20, 83, 0.22);
+  color: #f0b9d6;
+}
+
+[data-bs-theme=dark] .bk-help { background: rgba(129, 20, 83, 0.14); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 991.98px) {
+  .bk-rooms { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 575.98px) {
+  .bk-intro { padding-top: 112px; }
+  .bk-room__media { border-radius: 0; }
+  .bk-help { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bk-room,
+  .bk-room__media img,
+  .bk-room__cta svg { transition: none !important; transform: none !important; }
+}
+
+/* ==========================================================================
+   The footer headline is now a link to the booking page.
+   ========================================================================== */
+.coloc-footer-cta {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.coloc-footer-cta:hover,
+.coloc-footer-cta:hover h2 { color: var(--at-theme-primary, #811453); }
